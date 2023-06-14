@@ -33,8 +33,31 @@
       <ng-container matColumnDef="category">
         <th mat-header-cell *matHeaderCellDef> Categoria </th>
         <td mat-cell *matCellDef="let course"> {{ course.category }}
-          <mat-icon aria-hidden="false" aria-label="Categoria do curso" fontIcon= '{{course.category | category}}'></mat-icon>
+          <mat-icon aria-hidden="false" aria-label="Categoria do curso"
+            fontIcon='{{course.category | category}}'></mat-icon>
         </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+          <button mat-mini-fab matTooltip="Accent" color="accent" aria-label="Adicionar curso" (click)="onAdd()" >
+            <mat-icon >add</mat-icon>
+          </button>
+        </mat-header-cell>
+
+        <mat-cell *matCellDef="let course">
+          <button mat-icon-button matTooltip="Accent" color="accent" aria-label="editar">
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button  color="accent" aria-label="excluir" class="warning-button">
+            <mat-icon>delete</mat-icon>
+          </button>
+
+
+        </mat-cell>
+
       </ng-container>
 
 
